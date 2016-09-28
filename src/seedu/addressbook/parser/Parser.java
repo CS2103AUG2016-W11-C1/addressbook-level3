@@ -80,6 +80,9 @@ public class Parser {
             case ViewAllCommand.COMMAND_WORD:
                 return prepareViewAll(arguments);
 
+            case OkCommand.COMMAND_WORD:
+                return prepareOk(arguments);
+
             case ExitCommand.COMMAND_WORD:
                 return new ExitCommand();
 
@@ -190,6 +193,10 @@ public class Parser {
             return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     ViewAllCommand.MESSAGE_USAGE));
         }
+    }
+
+    private Command prepareOk(String args) {
+        return new OkCommand(args);
     }
 
     /**
