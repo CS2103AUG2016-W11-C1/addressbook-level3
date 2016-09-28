@@ -5,6 +5,7 @@ import javafx.application.Platform;
 
 import javafx.stage.Stage;
 import seedu.addressbook.logic.Logic;
+import seedu.addressbook.storage.StorageFile;
 import seedu.addressbook.ui.Gui;
 import seedu.addressbook.ui.Stoppable;
 
@@ -20,7 +21,8 @@ public class Main extends Application implements Stoppable{
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        gui = new Gui(new Logic(), VERSION);
+        Logic logic = new Logic(new StorageFile());
+        gui = new Gui(logic, VERSION);
         gui.start(primaryStage, this);
     }
 
