@@ -28,11 +28,6 @@ public class Logic {
         setAddressBook(storage.load());
     }
 
-    Logic(Storage storage, AddressBook addressBook) {
-        setStorage(storage);
-        setAddressBook(addressBook);
-    }
-
     void setStorage(Storage storage){
         this.storage = storage;
     }
